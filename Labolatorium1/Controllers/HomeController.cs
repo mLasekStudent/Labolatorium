@@ -6,6 +6,11 @@ namespace Labolatorium1.Controllers
 {
     public class HomeController : Controller
     {
+        public enum Operators
+        {
+            ADD, SUB, MUL, DIV, UP
+        }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,6 +25,47 @@ namespace Labolatorium1.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult Calculator(Operators op, double? a, double? b, Operators operators)
+        {
+
+            if (a == null || b == null || op == null)
+            {
+                return View("Error");
+            }
+
+            switch (op)
+            {
+
+                case Operators.ADD:
+
+                    ViewBag.op = a + b;
+                    break;
+
+                case Operators.SUB:
+
+                    ViewBag.op = a - b;
+                    break;
+
+                case Operators.MUL:
+
+                    ViewBag.op = a * b;
+                    break;
+
+
+                case Operators.DIV:
+
+                    ViewBag.op = a % b;
+                    break;
+
+                case Operators.UP:
+
+                    ViewBag.op = Math.Pow((double)a, (double)b);
+                    break;
+            }
+
             return View();
         }
 
