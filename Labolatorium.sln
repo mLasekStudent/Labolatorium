@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labolatorium1", "Labolatorium1\Labolatorium1.csproj", "{5214F2E5-3A7A-416C-AA63-920D1510E2C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labolatorium1", "Labolatorium1\Labolatorium1.csproj", "{5214F2E5-3A7A-416C-AA63-920D1510E2C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labolatorium2", "..\..\..\Downloads\Laboratorium ASP.NET (1)\Laboratorium ASP.NET\Lab1\Labolatorium2.csproj", "{58542106-BCD5-4A36-9100-D19E073CC2EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5214F2E5-3A7A-416C-AA63-920D1510E2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5214F2E5-3A7A-416C-AA63-920D1510E2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5214F2E5-3A7A-416C-AA63-920D1510E2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58542106-BCD5-4A36-9100-D19E073CC2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58542106-BCD5-4A36-9100-D19E073CC2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58542106-BCD5-4A36-9100-D19E073CC2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58542106-BCD5-4A36-9100-D19E073CC2EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
