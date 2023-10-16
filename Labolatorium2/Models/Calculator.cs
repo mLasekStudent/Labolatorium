@@ -1,4 +1,4 @@
-﻿namespace Lab1.Models
+﻿namespace Labolatorium2.Models
 {
     public class Calculator
     {
@@ -8,11 +8,11 @@
 
         public bool IsValid()
         {
-            return A != null && B != null && Op !=null;
+            return A != null && B != null && Op != null;
         }
         public double Calculate()
         {
-            switch (Op) 
+            switch (Op)
             {
                 case Operators.Add:
                     return (double)(A + B);

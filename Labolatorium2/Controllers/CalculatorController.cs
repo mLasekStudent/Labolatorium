@@ -1,8 +1,8 @@
-﻿using Lab1.Models;
+﻿using Labolatorium2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
 
-namespace Lab1.Controllers
+namespace Labolatorium2.Controllers
 {
     public class CalculatorController : Controller
     {
@@ -16,11 +16,11 @@ namespace Lab1.Controllers
         }
         public IActionResult Result(Calculator model)
         {
-          if (!model.IsValid())
+            if (!model.IsValid())
             {
                 return BadRequest();
             }
-          return View(model);
+            return View(model);
         }
     }
 }

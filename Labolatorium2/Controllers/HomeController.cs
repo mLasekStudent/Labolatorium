@@ -1,8 +1,8 @@
-﻿using Lab1.Models;
+﻿using Labolatorium2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Lab1.Controllers
+namespace Labolatorium2.Controllers
 {
     public class HomeController : Controller
     {
