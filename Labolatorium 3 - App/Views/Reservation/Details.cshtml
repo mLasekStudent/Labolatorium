@@ -1,0 +1,38 @@
+﻿@model Reservation
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Szczegóły</h1>
+<form asp-controller="Reservation" asp-action="Index" method="post">
+
+
+    <label asp-for="data"></label>
+    <input class="form-control" asp-for="data" readonly />
+    <span class="text-danger" asp-validation-for="data"></span>
+
+    <label asp-for="miasto"></label>
+    <input class="form-control" asp-for="miasto" readonly />
+    <span class="text-danger" asp-validation-for="miasto"></span>
+
+    <label asp-for="adres"></label>
+    <input class="form-control" asp-for="adres" readonly />
+    <span class="text-danger" asp-validation-for="adres"></span>
+
+    <label asp-for="pokoj"></label>
+    <input class="form-control" asp-for="pokoj" readonly />
+    <span class="text-danger" asp-validation-for="pokoj"></span>
+
+    <label asp-for="wlasciciel"></label>
+    <input class="form-control" asp-for="wlasciciel" readonly />
+    <span class="text-danger" asp-validation-for="wlasciciel"></span>
+
+    <label asp-for="cena"></label>
+    <input class="form-control" asp-for="cena" readonly/>
+    <span class="text-danger" asp-validation-for="cena"></span>
+
+    <br />
+    <button type="submit">Wróć</button>
+
+</form>
