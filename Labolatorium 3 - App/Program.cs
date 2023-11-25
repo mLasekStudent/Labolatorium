@@ -10,6 +10,7 @@ namespace Labolatorium_3___App
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            // builder.Services.AddDbContext<AppDbContext>(); EFContactService : IContactService  -- do uzupe³nienia
             builder.Services.AddSingleton<IContactService, MemoryContactService>();
             builder.Services.AddSingleton<IReservationService, MemoryReservationServices>();
             var app = builder.Build();
