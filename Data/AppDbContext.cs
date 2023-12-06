@@ -1,4 +1,5 @@
 ﻿using Data.Entities;
+using Labolatorium_3___App.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,23 +24,8 @@ namespace Data
                 .HasKey(e => e.ContactId);
             modelBuilder.Entity<ContactEntity>()
                 .HasData(
-                    new ContactEntity()
-                    {
-                        ContactId = 1,
-                        Name = "Test",
-                        Email = "test@wsei.edu.pl",
-                        Phone = "123123123",
-                        Priority = 1,
-                    },
-                    new ContactEntity()
-                    {
-                        ContactId = 2,
-                        Name = "Ewa",
-                        Email = "ewa@wsei.edu.pl",
-                        Phone = "123123321",
-                        Priority = 3,
-                        Birth = new DateTime(2000, 10, 10)
-                    }
+                    new ContactEntity() { ContactId = 1, Name = "Adam", Email = "adas@gmail.com", Phone = "123123123", Birth = new DateTime(2001, 11, 22), Priority = 3 },
+                    new ContactEntity() { ContactId = 2, Name = "Ewa", Email = "ewcia@gmail.com", Phone = "123123321", Priority = 1 }
                 );
         }
     }

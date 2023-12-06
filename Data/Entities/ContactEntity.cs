@@ -13,11 +13,22 @@ namespace Data.Entities
     {
         [Key]
         public int ContactId { get; set; }
-        [Column("name")]
+        [Column("Imie")]
+        [MaxLength(50)]
+        [Required]
         public string Name { get; set; }
+        [MaxLength(50)]
+        [Required]
         public string Email { get; set; }
+        [MaxLength(12)]
+        [MinLength(9)]
+        [Column("Nr_tel")]
         public string Phone { get; set; }
+        [DataType(DataType.Date)]
+        [Column("Data_ur")]
         public DateTime? Birth {  get; set; }
         public int Priority { get; set; }
+        [Column("Data_utworzenia")]
+        public DateTime Created {  get; set; }
     }
 }

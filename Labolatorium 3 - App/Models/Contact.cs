@@ -11,6 +11,8 @@ namespace Labolatorium_3___App.Models
         [StringLength(maximumLength: 50, ErrorMessage = "Zbyt długie imię, wpisz max 50 znaków!")]
         [Display(Name = "Imię")]
         public string Name { get; set; }
+        [MaxLength(50)]
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Phone]

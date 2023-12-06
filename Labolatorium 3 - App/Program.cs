@@ -1,4 +1,5 @@
 using Labolatorium_3___App.Models;
+using System.Xml.Linq;
 
 namespace Labolatorium_3___App
 {
@@ -14,6 +15,8 @@ namespace Labolatorium_3___App
             builder.Services.AddSingleton<IContactService, MemoryContactService>();
             builder.Services.AddSingleton<IReservationService, MemoryReservationServices>();
             builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
+            builder.Services.AddDbContext<Data.AppDbContext>();
+            builder.Services.AddTransient<IContactService, EFContactService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
