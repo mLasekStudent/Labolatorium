@@ -13,6 +13,7 @@ namespace Labolatorium_3___App
             // builder.Services.AddDbContext<AppDbContext>(); EFContactService : IContactService  -- do uzupe³nienia
             builder.Services.AddSingleton<IContactService, MemoryContactService>();
             builder.Services.AddSingleton<IReservationService, MemoryReservationServices>();
+            builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

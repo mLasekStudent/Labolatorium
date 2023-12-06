@@ -35,6 +35,21 @@ namespace Labolatorium_3___App.Controllers
         }
 
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            return View(_contactService.FindById(id));
+        }
+        [HttpPost]
+        public IActionResult Details(Contact model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Update(int id)
         {
             return View(_contactService.FindById(id));
@@ -49,6 +64,24 @@ namespace Labolatorium_3___App.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            return View(_contactService.FindById(id));
+        }
+        [HttpPost]
+        public IActionResult Delete(Contact model)
+        {
+            var contactToDelete = _contactService.FindById(model.Id);
+
+            if (contactToDelete != null)
+            {
+                _contactService.DeleteById(contactToDelete);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
         }
     }
 }

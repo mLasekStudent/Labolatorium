@@ -6,24 +6,33 @@
 }
 <h1>Skasuj użytkownika</h1>
 <form asp-controller="Contact" asp-action="Delete" method="post">
-    <label asp-for="Name"></label>
-    <input class="form-control" asp-for="Name" readonly/>
-    <span class="text-danger" asp-validation-for="Name"></span>
+    <div>
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" readonly/>
+        <span class="text-danger" asp-validation-for="Name"></span>
 
-    <label asp-for="Email"></label>
-    <input class="form-control" asp-for="Email" readonly/>
-    <span class="text-danger" asp-validation-for="Email"></span>
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" readonly/>
+        <span class="text-danger" asp-validation-for="Email"></span>
 
-    <label asp-for="Phone"></label>
-    <input class="form-control" asp-for="Phone" readonly/>
-    <span class="text-danger" asp-validation-for="Phone"></span>
+        <label asp-for="Phone"></label>
+        <input class="form-control" asp-for="Phone" readonly/>
+        <span class="text-danger" asp-validation-for="Phone"></span>
 
-    <label asp-for="Birth"></label>
-    <input class="form-control" asp-for="Birth" readonly/>
-    <span class="text-danger" asp-validation-for="Birth"></span>
+        <label asp-for="Birth"></label>
+        <input class="form-control" asp-for="Birth" readonly/>
+        <span class="text-danger" asp-validation-for="Birth"></span>
+
+        <label asp-for="Priority"></label>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+        <div class="form-control" readonly>
+            @Html.DisplayFor(model => model.Priority) @*Tylko wyświetlanie, więc nie potrzebna lista rozwijana*@
+        </div>
+    </div>
+
+    <br />
     <button type="submit">Usuń</button>
     <a asp-controller="Contact" asp-action="Index" method="post">
         <button type="button">Powrót</button>
     </a>
-    
 </form>

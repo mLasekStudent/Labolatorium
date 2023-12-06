@@ -14,8 +14,16 @@ namespace Labolatorium_3___App.Models
 
         };
         private int _id = 3;
+
+        private readonly IDateTimeProvider _timeProvider;
+        public MemoryReservationServices(IDateTimeProvider timeProvider)
+        {
+            _timeProvider = timeProvider;
+        }
+
         public void Add(Reservation reservation)
         {
+            reservation.Created = _timeProvider.GetCurrentDateTime();
             reservation.Id = _id++;
             _reservation[reservation.Id] = reservation;
         }

@@ -25,11 +25,9 @@ namespace Labolatorium_3___App.Controllers
         [HttpPost]
         public IActionResult Create(Reservation model)
         {
-            if (ModelState.IsValid) // nie ma jawnego powiązania ale sprawdza czy model istenieje
+            if (ModelState.IsValid)
             {
                 _reservationService.Add(model);
-                // zapamietaj kontakt
-
                 return RedirectToAction("Index");
             }
             return View();
@@ -46,8 +44,6 @@ namespace Labolatorium_3___App.Controllers
         {
             if (ModelState.IsValid)
             {
-
-
                 return RedirectToAction("Index");
             }
             return View();
@@ -89,18 +85,7 @@ namespace Labolatorium_3___App.Controllers
                 return RedirectToAction("Index");
             }
 
-            return NotFound(); // Możesz obsłużyć sytuację, gdy reservation nie istnieje.
-
-            /*
-            if (ModelState.IsValid) // nie ma jawnego powiązania ale sprawdza czy model istenieje
-            {
-                _reservationService.DeleteById(model);
-                // zapamietaj rezerwacje
-
-                return RedirectToAction("Index");
-            }
-            return View();*/
-
+            return NotFound();
         }
 
 
