@@ -17,7 +17,6 @@
 
         public void Add(Contact contact)
         {
-            contact.Created = _timeProvider.GetCurrentDateTime();
             contact.Id = _id++;
             _contacts[contact.Id] = contact;
         }

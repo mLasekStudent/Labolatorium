@@ -12,6 +12,8 @@ namespace Data
     {
         public DbSet<ContactEntity> Contacts { get; set; }
 
+        public DbSet<ReservationEntity> Reservations { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"data source = d:/contacts.db");

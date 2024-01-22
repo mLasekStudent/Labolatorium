@@ -23,7 +23,6 @@ namespace Labolatorium_3___App.Models
 
         public void Add(Reservation reservation)
         {
-            reservation.Created = _timeProvider.GetCurrentDateTime();
             reservation.Id = _id++;
             _reservation[reservation.Id] = reservation;
         }

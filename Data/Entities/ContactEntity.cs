@@ -28,7 +28,5 @@ namespace Data.Entities
         [Column("Data_ur")]
         public DateTime? Birth {  get; set; }
         public int Priority { get; set; }
-        [Column("Data_utworzenia")]
-        public DateTime Created {  get; set; }
     }
 }

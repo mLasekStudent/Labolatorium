@@ -23,7 +23,5 @@ namespace Labolatorium_3___App.Models
         public DateTime? Birth { get; set; }
         [Display(Name = "Priorytet")]
         public Priority Priority { get; set; }
-        [HiddenInput]
-        public DateTime Created { get; set; }
     }
 }
