@@ -17,6 +17,7 @@ namespace Data
             optionsBuilder.UseSqlite(@"data source = d:/contacts.db");
         }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ContactEntity>()

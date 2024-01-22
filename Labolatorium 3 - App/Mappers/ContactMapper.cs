@@ -15,6 +15,7 @@ namespace Labolatorium_3___App.Mappers
                 Email = entity.Email,
                 Phone = entity.Phone,
                 Birth = entity.Birth,
+                Priority = (Priority)entity.Priority,
             };
         }
 
@@ -27,6 +28,7 @@ namespace Labolatorium_3___App.Mappers
                 Email = model.Email,
                 Phone = model.Phone,
                 Birth = model.Birth,
+                Priority = (int)model.Priority,
             };
         }
     }

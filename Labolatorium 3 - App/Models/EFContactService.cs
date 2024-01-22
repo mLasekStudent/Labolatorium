@@ -26,6 +26,7 @@ namespace Labolatorium_3___App.Models
             if (find != null)
             {
                 _context.Contacts.Remove(find);
+                _context.SaveChanges();
             }
         }
 
@@ -42,6 +43,7 @@ namespace Labolatorium_3___App.Models
         public void Update(Contact contact)
         {
             _context.Contacts.Update(ContactMapper.ToEntity(contact));
+            _context.SaveChanges();
         }
     }
 }
