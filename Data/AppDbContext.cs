@@ -29,6 +29,14 @@ namespace Data
                     new ContactEntity() { ContactId = 1, Name = "Adam", Email = "adas@gmail.com", Phone = "123123123", Birth = new DateTime(2001, 11, 22), Priority = 3 },
                     new ContactEntity() { ContactId = 2, Name = "Ewa", Email = "ewcia@gmail.com", Phone = "123123321", Priority = 1 }
                 );
+
+            modelBuilder.Entity<ReservationEntity>()
+                .HasKey(e => e.Id);
+            modelBuilder.Entity<ReservationEntity>()
+                .HasData(
+                    new ReservationEntity() { Id = 1, data = new DateTime(2024, 03, 30), miasto = "Kraków", adres = "Miodowa 2", pokoj = 24, wlasciciel = "Robert Makłowicz", cena = 399.00m },
+                    new ReservationEntity() { Id = 2, data = new DateTime(2024, 02, 13), miasto = "Gdańsk", adres = "Masztowa 4", pokoj = 9, wlasciciel = "Krzysztof Krawczyk", cena = 449.00m }
+                );
         }
     }
 }

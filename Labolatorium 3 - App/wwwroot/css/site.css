@@ -18,5 +18,29 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: darkslategray;
+    color: #ccc8c0;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: floralwhite;
+    text-decoration: none;
+    border-bottom: 1px solid #807d78;
+    border-radius: 7px;
+}
+
+.btn-primary:link, .btn-primary:visited, .btn-primary:hover, .btn-primary:active {
+    background-color: #263f3f;
+    border-color: #ccc8c0;
+}
+
+.table {
+    color: #ccc8c0;
+}
+
+.btn-sec {
+    color: #e6e1d8;
+    background-color: #263f3f;
+    border-radius: 7px;
 }
