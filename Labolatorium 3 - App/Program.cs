@@ -1,5 +1,8 @@
 using Labolatorium_3___App.Models;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Data;
 
 namespace Labolatorium_3___App
 {
@@ -8,14 +11,18 @@ namespace Labolatorium_3___App
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connectionString = builder.Configuration.GetConnectionString("AppDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
 
             // Add services to the container.
+            builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
-            // builder.Services.AddDbContext<AppDbContext>(); EFContactService : IContactService  -- do uzupe³nienia
+            builder.Services.AddDbContext<Data.AppDbContext>();
+            builder.Services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<Data.AppDbContext>();
             builder.Services.AddSingleton<IContactService, MemoryContactService>();
             builder.Services.AddSingleton<IReservationService, MemoryReservationServices>();
             builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
-            builder.Services.AddDbContext<Data.AppDbContext>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
             builder.Services.AddTransient<IContactService, EFContactService>();
             builder.Services.AddTransient<IReservationService, EFReservationService>();
             var app = builder.Build();
@@ -33,7 +40,10 @@ namespace Labolatorium_3___App
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
+            app.MapRazorPages();
 
             app.MapControllerRoute(
                 name: "default",

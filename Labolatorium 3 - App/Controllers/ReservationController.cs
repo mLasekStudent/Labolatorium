@@ -1,8 +1,10 @@
 ﻿using Labolatorium_3___App.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Labolatorium_3___App.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ReservationController : Controller
     {
         private readonly IReservationService _reservationService;
@@ -12,6 +14,7 @@ namespace Labolatorium_3___App.Controllers
         {
             _reservationService = reservationService;
         }
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(_reservationService.FindAll());
@@ -33,7 +36,7 @@ namespace Labolatorium_3___App.Controllers
             return View();
 
         }
-
+        [Authorize(Roles = "user")]
         [HttpGet]
         public IActionResult Details(int id)
         {
