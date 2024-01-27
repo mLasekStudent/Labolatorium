@@ -15,7 +15,8 @@ namespace Labolatorium_3___App.Controllers
 
         public IActionResult Index()
         {
-            return View();
+                ViewData["Visit"] = Response.HttpContext.Items[LastVisitCookie.CookieName];
+                return View();
         }
 
         public IActionResult Privacy()

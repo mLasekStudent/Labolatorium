@@ -39,12 +39,14 @@ namespace Labolatorium_3___App
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseMiddleware<LastVisitCookie>();
+            app.UseAuthentication();
 
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
             app.MapRazorPages();
-
+            
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

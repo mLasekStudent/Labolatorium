@@ -28,6 +28,7 @@ namespace Labolatorium_3___App.Areas.Identity.Pages.Account
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
 
         /// <summary>

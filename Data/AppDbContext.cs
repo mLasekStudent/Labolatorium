@@ -62,7 +62,8 @@ namespace Data
                 Email = "adam@wsei.edu.pl",
                 EmailConfirmed = true,
                 UserName = "adam",
-                NormalizedUserName = "ADMIN"
+                NormalizedUserName = "ADAM",
+                NormalizedEmail = "ADAM@WSEI.EDU.PL"
             };
 
             // haszowanie hasła
@@ -92,19 +93,20 @@ namespace Data
                 ConcurrencyStamp = USER_ROLE_ID
             });
 
-            // utworzenie administratora jako użytkownika
+            // utworzenie użytkownika
             var user = new IdentityUser
             {
                 Id = USER_ID,
                 Email = "ewa@wsei.edu.pl",
                 EmailConfirmed = true,
                 UserName = "ewa",
-                NormalizedUserName = "USER"
+                NormalizedUserName = "EWA",
+                NormalizedEmail = "EWA@WSEI.EDU.PL"
             };
 
             // haszowanie hasła
             PasswordHasher<IdentityUser> uph = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = uph.HashPassword(user, "abcd1234!@#$");
+            user.PasswordHash = uph.HashPassword(user, "abcd1234!@#$ABCD");
 
             // zapisanie użytkownika
             modelBuilder.Entity<IdentityUser>().HasData(user);
