@@ -35,7 +35,6 @@ namespace Labolatorium_3___App.Controllers
             }
             return View();
         }
-        [Authorize(Roles = "user")]
         [HttpGet]
         public IActionResult Details(int id)
         {

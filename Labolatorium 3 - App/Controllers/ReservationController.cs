@@ -1,6 +1,7 @@
 ﻿using Labolatorium_3___App.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Data.Entities;
 
 namespace Labolatorium_3___App.Controllers
 {
@@ -36,7 +37,6 @@ namespace Labolatorium_3___App.Controllers
             return View();
 
         }
-        [Authorize(Roles = "user")]
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -89,6 +89,34 @@ namespace Labolatorium_3___App.Controllers
             }
 
             return NotFound();
+        }
+
+        [HttpGet]
+        public IActionResult CreateApi()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateApi(Reservation c)
+        {
+            if (ModelState.IsValid)
+            {
+                _reservationService.Add(c);
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var reservation = _reservationService.FindById(id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+            return View(reservation);
         }
 
 

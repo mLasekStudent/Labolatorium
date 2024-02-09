@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labolatorium2", "Labolatori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labolatorium 3 - App", "Labolatorium 3 - App\Labolatorium 3 - App.csproj", "{2DBB887C-2410-4D55-A397-311173C391C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{066091DD-EC00-4908-86DD-8FCA56DF0B1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{066091DD-EC00-4908-86DD-8FCA56DF0B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationControllerTest", "ReservationControllerTest\ReservationControllerTest.csproj", "{6CDB8CBD-6787-432D-A022-DB12D4280F64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{066091DD-EC00-4908-86DD-8FCA56DF0B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{066091DD-EC00-4908-86DD-8FCA56DF0B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{066091DD-EC00-4908-86DD-8FCA56DF0B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDB8CBD-6787-432D-A022-DB12D4280F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDB8CBD-6787-432D-A022-DB12D4280F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDB8CBD-6787-432D-A022-DB12D4280F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDB8CBD-6787-432D-A022-DB12D4280F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

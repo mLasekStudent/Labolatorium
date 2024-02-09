@@ -15,6 +15,10 @@ namespace Data
         public DbSet<ContactEntity> Contacts { get; set; }
 
         public DbSet<ReservationEntity> Reservations { get; set; }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
